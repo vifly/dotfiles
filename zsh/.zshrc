@@ -60,7 +60,7 @@ alias sys='sudo systemctl'
 export PATH=$HOME/.local/bin:$PATH
 #export XDG_CONFIG_HOME="~/.config"
 export SYSTEMD_EDITOR=nano
-export EDITOR=nvim
+export EDITOR=vim
 
 # 美化 time 的输出
 autoload -Uz colors
