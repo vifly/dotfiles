@@ -16,7 +16,7 @@ zinit light zsh-users/zsh-autosuggestions
 # 补全
 zinit ice lucid wait='0'
 zinit light zsh-users/zsh-completions
-zstyle ':completion:*:complete:*' cache-path "${HOME}/.zcompdump"
+# zstyle ':completion:*:complete:*' cache-path "${HOME}/.zcompdump"
 
 # 加载 OMZ 框架及部分插件
 zinit snippet OMZ::lib/completion.zsh
@@ -44,11 +44,13 @@ PROMPT=" $PROMPT"
 eval $(thefuck --alias)
 
 # alias 设置
-alias cat="bat --theme 'Sublime Snazzy'"
-alias ping=prettyping
-alias ls=exa
+(( $+commands[bat] )) && alias cat="bat --theme 'Sublime Snazzy'"
+(( $+commands[prettyping] )) && alias ping=prettyping
+(( $+commands[exa] )) && alias ls=exa
 alias la="ls -alh"
-alias find=fd
+(( $+commands[fdfind] )) && alias find=fdfind
+(( $+commands[fdfind] )) && alias fd=fdfind
+(( $+commands[fd] )) && alias find=fd
 alias pythonhttpserver="python3 -m http.server"
 alias pb="curl -F 'c=@-' 'https://fars.ee/'"
 alias sys='sudo systemctl'
