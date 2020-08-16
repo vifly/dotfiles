@@ -54,12 +54,14 @@ alias la="ls -alh"
 alias pythonhttpserver="python3 -m http.server"
 alias pb="curl -F 'c=@-' 'https://fars.ee/'"
 alias sys='sudo systemctl'
+alias rmrf="rm -rf"
+alias gitcm="git commit -m"
 
 # 加载一些私密的 alias
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 # 设置环境变量
-export PATH=$HOME/.local/bin:$PATH
+(( !$PATH[(I)$HOME/.local/bin] )) && export PATH=$HOME/.local/bin:$PATH
 #export XDG_CONFIG_HOME="~/.config"
 export SYSTEMD_EDITOR=nano
 export EDITOR=vim
