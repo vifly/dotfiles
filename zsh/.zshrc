@@ -9,6 +9,10 @@ zinit light skywind3000/z.lua
 zinit ice lucid wait='0' atinit='zpcompinit'
 zinit light zdharma/fast-syntax-highlighting
 
+# 增强版历史记录
+zinit ice lucid wait="0" pick="sqlite-history.zsh" atload='autoload -Uz add-zsh-hook'
+zinit light larkery/zsh-histdb
+
 # 自动建议
 zinit ice lucid wait="0" atload='_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
@@ -51,7 +55,9 @@ alias la="ls -alh"
 (( $+commands[fdfind] )) && alias find=fdfind
 (( $+commands[fdfind] )) && alias fd=fdfind
 (( $+commands[fd] )) && alias find=fd
+(( $+commands[rg] )) && alias grep=rg
 alias pythonhttpserver="python3 -m http.server"
+alias pdb="python3 -m pdb"
 alias pb="curl -F 'c=@-' 'https://fars.ee/'"
 alias sys='sudo systemctl'
 alias rmrf="rm -rf"
@@ -75,3 +81,16 @@ colors
         "User: $blue%U$rst"$'\t'"System: $blue%S$rst  Total: $blue%*Es$rst"$'\n'
         "CPU:  $blue%P$rst"$'\t'"Mem:    $blue%M MB$rst")
 }
+
+# zsh-histdb 与 zsh-autosuggestions 的集成
+_zsh_autosuggest_strategy_histdb_top_here() {
+    local query="select commands.argv from
+history left join commands on history.command_id = commands.rowid
+left join places on history.place_id = places.rowid
+where places.dir LIKE '$(sql_escape $PWD)%'
+and commands.argv LIKE '$(sql_escape $1)%'
+group by commands.argv order by count(*) desc limit 1"
+    suggestion=$(_histdb_query "$query")
+}
+
+ZSH_AUTOSUGGEST_STRATEGY=histdb_top_here
