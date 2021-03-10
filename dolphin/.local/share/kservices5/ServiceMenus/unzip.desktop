@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
-MimeType=application/zip;application/x-zip-compressed;application/octet-stream;
+MimeType=application/zip;application/x-zip-compressed
 Actions=unzipsjis;unzipgbk;
 X-KDE-Submenu=Unzip as
 
