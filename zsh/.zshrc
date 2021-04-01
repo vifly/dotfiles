@@ -63,6 +63,9 @@ alias sys='sudo systemctl'
 alias rmrf="rm -rf"
 alias gitcm="git commit -m"
 
+# 加载其他位置的文件
+[ -f /etc/grc.zsh ] && source /etc/grc.zsh
+
 # 加载一些私密的 alias
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
