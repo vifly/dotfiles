@@ -1,0 +1,12 @@
+# include the system-wide settings
+$include /etc/inputrc
+
+# enable partial history search
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# If you aren’t getting left/right arrow functionality, and ctrl-left/right isn’t working to skip words, uncomment below four lines
+# "\e[C": forward-char
+# "\e[D": backward-char
+# "\e[1;3C": forward-word
+# "\e[1;3D": backward-word
