@@ -27,7 +27,6 @@ zinit snippet OMZ::lib/completion.zsh
 zinit snippet OMZ::lib/history.zsh
 zinit snippet OMZ::lib/key-bindings.zsh
 zinit snippet OMZ::lib/theme-and-appearance.zsh
-zinit snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
 
 zinit ice lucid wait='1'
 zinit snippet OMZ::plugins/git/git.plugin.zsh
@@ -74,6 +73,14 @@ alias gitcm="git commit -m"
 #export XDG_CONFIG_HOME="~/.config"
 export SYSTEMD_EDITOR=nano
 export EDITOR=vim
+
+export GOPATH="$HOME/code/go_code"
+export GOBIN="$HOME/.local/bin"
+export GO111MODULE="on"
+export GOPROXY="https://goproxy.cn,direct"
+
+(( $+commands[pyenv] )) && export PYENV_ROOT="$HOME/.local/bin/pyenv/" && export PATH="$PYENV_ROOT/bin:$PATH" && eval "$(pyenv init --path)"
+(( $+commands[bat] )) && export MANPAGER="sh -c 'col -bx | bat -l man -p'" && export MANROFFOPT="-c"
 
 # 美化 time 的输出
 autoload -Uz colors
