@@ -47,7 +47,7 @@ PROMPT=" $PROMPT"
 eval $(thefuck --alias)
 
 # alias 设置
-(( $+commands[bat] )) && alias cat="bat --theme 'Sublime Snazzy'"
+(( $+commands[bat] )) && alias cat="bat --theme 'Coldark-Dark'"
 (( $+commands[prettyping] )) && alias ping=prettyping
 (( $+commands[exa] )) && alias ls=exa
 alias la="ls -alh"
@@ -79,7 +79,6 @@ export GOBIN="$HOME/.local/bin"
 export GO111MODULE="on"
 export GOPROXY="https://goproxy.cn,direct"
 
-(( $+commands[pyenv] )) && export PYENV_ROOT="$HOME/.local/bin/pyenv/" && export PATH="$PYENV_ROOT/bin:$PATH" && eval "$(pyenv init --path)"
 (( $+commands[bat] )) && export MANPAGER="sh -c 'col -bx | bat -l man -p'" && export MANROFFOPT="-c"
 
 # 美化 time 的输出
