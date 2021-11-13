@@ -7,7 +7,7 @@ zinit light skywind3000/z.lua
 
 # 语法高亮
 zinit ice lucid wait='0' atinit='zpcompinit'
-zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 
 # 增强版历史记录
 zinit ice lucid wait="0" pick="sqlite-history.zsh" atload='autoload -Uz add-zsh-hook'
@@ -29,7 +29,7 @@ zinit snippet OMZ::lib/key-bindings.zsh
 zinit snippet OMZ::lib/theme-and-appearance.zsh
 
 # 加载 pure 主题
-zinit ice pick"async.zsh" src"pure.zsh"
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 
 # 自定义 pure 主题内容
