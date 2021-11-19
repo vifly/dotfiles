@@ -1,3 +1,12 @@
 [submodule "zsh/.local/bin/zinit"]
 	path = zsh/.local/bin/zinit
 	url = https://github.com/zdharma-continuum/zinit
+[submodule "byobu/.local/share/tmux/plugins/tmux-continuum"]
+	path = byobu/.local/share/tmux/plugins/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum
+[submodule "byobu/.local/share/tmux/plugins/tmux-resurrect"]
+	path = byobu/.local/share/tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule "byobu/.local/share/tmux/plugins/tpm"]
+	path = byobu/.local/share/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
