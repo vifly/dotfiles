@@ -62,21 +62,28 @@ alias gitcm="git commit -m"
 # 加载其他位置的文件
 [ -f /etc/grc.zsh ] && source /etc/grc.zsh
 
-# 加载一些私密的 alias
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
 # 设置环境变量
+# XDG base directory
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+
+# 让程序遵循 XDG 规范
+source $XDG_CONFIG_HOME/zsh/zsh_xdg
+
 (( !$PATH[(I)$HOME/.local/bin] )) && export PATH=$HOME/.local/bin:$PATH
-#export XDG_CONFIG_HOME="~/.config"
 export SYSTEMD_EDITOR=nano
 export EDITOR=vim
 
-export GOPATH="$HOME/code/go_code"
 export GOBIN="$HOME/.local/bin"
 export GO111MODULE="on"
 export GOPROXY="https://goproxy.cn,direct"
 
 (( $+commands[bat] )) && export MANPAGER="sh -c 'col -bx | bat -l man -p'" && export MANROFFOPT="-c"
+
+# 加载一些私密的 alias
+[ -f $XDG_CONFIG_HOME/zsh/zshrc.local ] && source $XDG_CONFIG_HOME/zsh/zshrc.local
 
 # 美化 time 的输出
 autoload -Uz colors
