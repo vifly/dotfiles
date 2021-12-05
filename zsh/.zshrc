@@ -82,6 +82,8 @@ export GOPROXY="https://goproxy.cn,direct"
 
 (( $+commands[bat] )) && export MANPAGER="sh -c 'col -bx | bat -l man -p'" && export MANROFFOPT="-c"
 
+(( $+commands[sccache] )) && export RUSTC_WRAPPER=sccache
+
 # 加载一些私密的 alias
 [ -f $XDG_CONFIG_HOME/zsh/zshrc.local ] && source $XDG_CONFIG_HOME/zsh/zshrc.local
 

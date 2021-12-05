@@ -24,8 +24,8 @@ export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
 export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
 export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
 export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
-[ -f $XDG_CONFIG_HOME/pg ] || mkdir -p "$XDG_CONFIG_HOME/pg"
-[ -f $XDG_STATE_HOME ] || mkdir -p "$XDG_STATE_HOME"
+[ -d $XDG_CONFIG_HOME/pg ] || mkdir -p "$XDG_CONFIG_HOME/pg"
+[ -d $XDG_STATE_HOME ] || mkdir -p "$XDG_STATE_HOME"
 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 
@@ -51,7 +51,7 @@ alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 
-[ -f $XDG_DATA_HOME/adb ] || mkdir -p "$XDG_DATA_HOME/adb"
+[ -d $XDG_DATA_HOME/adb ] || mkdir -p "$XDG_DATA_HOME/adb"
 alias adb='HOME=$XDG_DATA_HOME/adb adb'
 
 export GOPATH="$XDG_DATA_HOME"/go

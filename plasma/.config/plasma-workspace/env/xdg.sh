@@ -29,8 +29,8 @@ export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
 export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
 export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
 export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
-[ -f $XDG_CONFIG_HOME/pg ] || mkdir -p "$XDG_CONFIG_HOME/pg"
-[ -f $XDG_STATE_HOME ] || mkdir -p "$XDG_STATE_HOME"
+[ -d $XDG_CONFIG_HOME/pg ] || mkdir -p "$XDG_CONFIG_HOME/pg"
+[ -d $XDG_STATE_HOME ] || mkdir -p "$XDG_STATE_HOME"
 
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 
