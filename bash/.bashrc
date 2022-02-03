@@ -49,7 +49,7 @@ alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 
 [ -f "$XDG_CONFIG_HOME"/python/startup.py ] && export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/startup.py
 
-alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/yarnrc"'
 
 [ -d $XDG_DATA_HOME/adb ] || mkdir -p "$XDG_DATA_HOME/adb"
 alias adb='HOME=$XDG_DATA_HOME/adb adb'

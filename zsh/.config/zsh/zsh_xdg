@@ -34,7 +34,7 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
 [ -f "$XDG_CONFIG_HOME"/python/startup.py ] && export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/startup.py
 
-(( $+commands[yarn] )) && alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+(( $+commands[yarn] )) && alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/yarnrc"'
 
 [ -d $XDG_DATA_HOME/adb ] || mkdir -p "$XDG_DATA_HOME/adb"
 (( $+commands[adb] )) && alias adb='HOME=$XDG_DATA_HOME/adb adb'
