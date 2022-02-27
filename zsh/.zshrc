@@ -47,6 +47,7 @@ eval $(thefuck --alias)
 (( $+commands[bat] )) && alias cat="bat --theme 'Coldark-Dark'"
 (( $+commands[prettyping] )) && alias ping=prettyping
 (( $+commands[exa] )) && alias ls=exa
+(( $+commands[exa] )) && alias tree="exa --tree -a"
 alias la="ls -alh"
 (( $+commands[fdfind] )) && alias find=fdfind
 (( $+commands[fdfind] )) && alias fd=fdfind
@@ -79,6 +80,8 @@ export EDITOR=vim
 export GOBIN="$HOME/.local/bin"
 export GO111MODULE="on"
 export GOPROXY="https://goproxy.cn,direct"
+
+export DEBUGINFOD_URLS="https://debuginfod.elfutils.org/"
 
 (( $+commands[bat] )) && export MANPAGER="sh -c 'col -bx | bat -l man -p'" && export MANROFFOPT="-c"
 
