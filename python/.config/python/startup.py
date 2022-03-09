@@ -24,6 +24,7 @@ except FileNotFoundError: # history file not exist yet
     hist_old_len = 1
 
 def save_history(previous_length, hist_file):
+    import readline
     current_length = readline.get_current_history_length()
     length = current_length - previous_length
     readline.append_history_file(length, hist_file) # only append new history of this session
