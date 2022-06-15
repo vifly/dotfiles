@@ -56,4 +56,10 @@ alias adb='HOME=$XDG_DATA_HOME/adb adb'
 
 export GOPATH="$XDG_DATA_HOME"/go
 
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+
 export GDBHISTFILE="$XDG_DATA_HOME"/gdb/history
+
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
