@@ -74,6 +74,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 source $XDG_CONFIG_HOME/zsh/zsh_xdg
 
 (( !$PATH[(I)$HOME/.local/bin] )) && export PATH=$HOME/.local/bin:$PATH
+(( !$PATH[(I)$HOME/.nix-profile/bin] )) && export PATH=$HOME/.nix-profile/bin:$PATH
 export SYSTEMD_EDITOR=nano
 export EDITOR=vim
 
@@ -81,7 +82,10 @@ export GOBIN="$HOME/.local/bin"
 export GO111MODULE="on"
 export GOPROXY="https://goproxy.cn,direct"
 
-export DEBUGINFOD_URLS="https://debuginfod.elfutils.org/"
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org https://repo.archlinuxcn.org"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/shims:$PATH"
 
 (( $+commands[bat] )) && export MANPAGER="sh -c 'col -bx | bat -l man -p'" && export MANROFFOPT="-c"
 
@@ -112,3 +116,6 @@ group by commands.argv order by count(*) desc limit 1"
 }
 
 ZSH_AUTOSUGGEST_STRATEGY=(histdb_top_here match_prev_cmd completion)
+
+(( $+commands[pyenv] )) && eval "$(pyenv init -)"
+(( $+commands[pyenv] )) && eval "$(pyenv virtualenv-init -)"
