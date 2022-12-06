@@ -30,6 +30,9 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 
 export KDEHOME="$XDG_CONFIG_HOME"/kde
 
+[ -d "$XDG_DATA_HOME"/gnupg ] || mkdir -m 700 -p "$XDG_DATA_HOME/gnupg"
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+
 export ANDROID_HOME="$XDG_DATA_HOME"/android
 
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle

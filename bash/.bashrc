@@ -51,11 +51,12 @@ alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/yarnrc"'
 
-[ -d $XDG_DATA_HOME/adb ] || mkdir -p "$XDG_DATA_HOME/adb"
+[ -d "$XDG_DATA_HOME"/adb ] || mkdir -p "$XDG_DATA_HOME/adb"
 alias adb='HOME=$XDG_DATA_HOME/adb adb'
 
 export GOPATH="$XDG_DATA_HOME"/go
 
+[ -d "$XDG_DATA_HOME"/gnupg ] || mkdir -m 700 -p "$XDG_DATA_HOME/gnupg"
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
