@@ -36,3 +36,9 @@ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export ANDROID_HOME="$XDG_DATA_HOME"/android
 
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
+
+[ -d "$XDG_DATA_HOME"/adb ] || mkdir -p "$XDG_DATA_HOME/adb"
+(( $+commands[adb] )) && alias adb='HOME=$XDG_DATA_HOME/adb adb'
+
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
