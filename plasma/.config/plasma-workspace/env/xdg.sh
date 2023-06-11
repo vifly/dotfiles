@@ -42,3 +42,5 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
+
+export KERAS_HOME="$XDG_CONFIG_HOME/keras"
