@@ -73,3 +73,5 @@ export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible.cfg"
 export ANSIBLE_GALAXY_CACHE_DIR="$XDG_CACHE_HOME/ansible/galaxy_cache"
 
 export KERAS_HOME="$XDG_CONFIG_HOME/keras"
+
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
