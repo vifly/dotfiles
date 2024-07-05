@@ -13,4 +13,4 @@ Exec="unzip" "-O" "sjis" "%U"
 [Desktop Action unzipgbk]
 Name=Unzip here GBK
 Icon=application-zip
-Exec="unzip" "-O" "gb18030" "%U" 
+Exec="unzip" "-O" "gb18030" "%U"

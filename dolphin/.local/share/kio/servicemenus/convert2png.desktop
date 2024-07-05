@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=image/heif
+Actions=convert2PNG
+
+[Desktop Action convert2PNG]
+Name=Convert to PNG
+Icon=dvipng
+Exec=heif-convert -q 100 %U "%U.png"
