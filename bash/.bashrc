@@ -13,6 +13,10 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
+[ -d $XDG_DATA_HOME/pnpm ] && export PATH=$XDG_DATA_HOME/pnpm:$PATH
+[ -d $HOME/.local/bin ] && export PATH=$HOME/.local/bin:$PATH
+[ -d $HOME/.nix-profile/bin ] && export PATH=$HOME/.nix-profile/bin:$PATH
+
 export REDISCLI_HISTFILE="$XDG_DATA_HOME"/redis/rediscli_history
 export REDISCLI_RCFILE="$XDG_CONFIG_HOME"/redis/redisclirc
 
@@ -51,6 +55,7 @@ alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/yarnrc"'
 
+export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
 [ -d "$XDG_DATA_HOME"/adb ] || mkdir -p "$XDG_DATA_HOME/adb"
 alias adb='HOME=$XDG_DATA_HOME/adb adb'
 
@@ -75,3 +80,7 @@ export ANSIBLE_GALAXY_CACHE_DIR="$XDG_CACHE_HOME/ansible/galaxy_cache"
 export KERAS_HOME="$XDG_CONFIG_HOME/keras"
 
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+
+export RENPY_PATH_TO_SAVES="$XDG_DATA_HOME/renpy"
+
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"

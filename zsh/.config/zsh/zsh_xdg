@@ -36,6 +36,7 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
 (( $+commands[yarn] )) && alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/yarnrc"'
 
+export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
 [ -d "$XDG_DATA_HOME"/adb ] || mkdir -p "$XDG_DATA_HOME/adb"
 (( $+commands[adb] )) && alias adb='HOME=$XDG_DATA_HOME/adb adb'
 
@@ -60,3 +61,7 @@ export ANSIBLE_GALAXY_CACHE_DIR="${XDG_CACHE_HOME}/ansible/galaxy_cache"
 export KERAS_HOME="${XDG_CONFIG_HOME}/keras"
 
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+
+export RENPY_PATH_TO_SAVES="$XDG_DATA_HOME/renpy"
+
+export PNPM_HOME="$XDG_DATA_HOME"/pnpm
