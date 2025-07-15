@@ -48,3 +48,5 @@ export KERAS_HOME="$XDG_CONFIG_HOME/keras"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 
 export RENPY_PATH_TO_SAVES="$XDG_DATA_HOME/renpy"
+
+export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
