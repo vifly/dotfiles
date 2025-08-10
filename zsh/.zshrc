@@ -71,6 +71,9 @@ export GOPROXY="https://goproxy.cn,direct"
 
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org https://repo.archlinuxcn.org"
 
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+
 # 让程序遵循 XDG 规范
 source $XDG_CONFIG_HOME/zsh/zsh_xdg
 
