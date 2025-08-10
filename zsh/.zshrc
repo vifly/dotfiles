@@ -80,6 +80,15 @@ source $XDG_CONFIG_HOME/zsh/zsh_xdg
 # 加载一些私密的 alias
 [ -f $XDG_CONFIG_HOME/zsh/zshrc.local ] && source $XDG_CONFIG_HOME/zsh/zshrc.local
 
+# 添加一些可执行文件到 $PATH
+(( !$PATH[(I)$XDG_DATA_HOME/pnpm] )) && export PATH=$XDG_DATA_HOME/pnpm:$PATH
+(( !$PATH[(I)$HOME/.local/bin] )) && export PATH=$HOME/.local/bin:$PATH
+(( !$PATH[(I)$HOME/.nix-profile/bin] )) && export PATH=$HOME/.nix-profile/bin:$PATH
+
+(( $+commands[bat] )) && export MANPAGER="sh -c 'col -bx | bat -l man -p'" && export MANROFFOPT="-c"
+
+(( $+commands[sccache] )) && export RUSTC_WRAPPER=sccache
+
 # 美化 time 的输出
 autoload -Uz colors
 colors
