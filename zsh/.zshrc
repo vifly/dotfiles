@@ -40,28 +40,20 @@ PURE_PROMPT_SYMBOL=' >>'
 prompt_newline='%666v'
 PROMPT=" $PROMPT"
 
-# fuck 的设置
-eval $(thefuck --alias)
-
 # alias 设置
 (( $+commands[bat] )) && alias cat="bat --theme 'Coldark-Dark'"
 (( $+commands[prettyping] )) && alias ping=prettyping
 (( $+commands[exa] )) && alias ls=exa
 (( $+commands[exa] )) && alias tree="exa --tree -a"
 alias la="ls -alh"
-(( $+commands[fdfind] )) && alias find=fdfind
-(( $+commands[fdfind] )) && alias fd=fdfind
-(( $+commands[fd] )) && alias find=fd
-(( $+commands[rg] )) && alias grep=rg
+alias ll="ls -lh"
 alias pythonhttpserver="python3 -m http.server"
 alias pdb="python3 -m pdb"
+alias pj="python3 -m json.tool"
 alias pb="curl -F 'c=@-' 'https://fars.ee/'"
 alias sys='sudo systemctl'
 alias rmrf="rm -rf"
 alias gitcm="git commit -m"
-
-# 加载其他位置的文件
-[ -f /etc/grc.zsh ] && source /etc/grc.zsh
 
 # 设置环境变量
 # XDG base directory
@@ -70,11 +62,6 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
-# 让程序遵循 XDG 规范
-source $XDG_CONFIG_HOME/zsh/zsh_xdg
-
-(( !$PATH[(I)$HOME/.local/bin] )) && export PATH=$HOME/.local/bin:$PATH
-(( !$PATH[(I)$HOME/.nix-profile/bin] )) && export PATH=$HOME/.nix-profile/bin:$PATH
 export SYSTEMD_EDITOR=nano
 export EDITOR=vim
 
@@ -84,12 +71,8 @@ export GOPROXY="https://goproxy.cn,direct"
 
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org https://repo.archlinuxcn.org"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/shims:$PATH"
-
-(( $+commands[bat] )) && export MANPAGER="sh -c 'col -bx | bat -l man -p'" && export MANROFFOPT="-c"
-
-(( $+commands[sccache] )) && export RUSTC_WRAPPER=sccache
+# 让程序遵循 XDG 规范
+source $XDG_CONFIG_HOME/zsh/zsh_xdg
 
 # 加载一些私密的 alias
 [ -f $XDG_CONFIG_HOME/zsh/zshrc.local ] && source $XDG_CONFIG_HOME/zsh/zshrc.local
@@ -116,6 +99,3 @@ group by commands.argv order by count(*) desc limit 1"
 }
 
 ZSH_AUTOSUGGEST_STRATEGY=(histdb_top_here match_prev_cmd completion)
-
-(( $+commands[pyenv] )) && eval "$(pyenv init -)"
-(( $+commands[pyenv] )) && eval "$(pyenv virtualenv-init -)"
