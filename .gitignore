@@ -255,6 +255,5 @@ Cargo.lock
 
 # Other files
 cargo/**/*
-!cargo/.local/share/cargo/config
 mpv/.config/mpv/shaders_cache/
 mpv/.config/mpv/watch_later/
